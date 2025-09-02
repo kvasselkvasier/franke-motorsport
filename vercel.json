@@ -2,12 +2,7 @@
   "name": "franke-motorsport",
   "version": 2,
   
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
+  
   "env": {
     "NODE_ENV": "production"
   },
