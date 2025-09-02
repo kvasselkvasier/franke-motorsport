@@ -17,9 +17,9 @@ export default function AdSense({
 }: AdSenseProps) {
   useEffect(() => {
     try {
-  // @ts-expect-error
+  // @ts-expect-error: adsbygoogle ist nicht immer im Window-Typ vorhanden
       if (typeof window !== 'undefined' && window.adsbygoogle) {
-  // @ts-expect-error
+  // @ts-expect-error: adsbygoogle ist nicht immer im Window-Typ vorhanden
         (window.adsbygoogle = window.adsbygoogle || []).push({})
       }
     } catch (error) {
