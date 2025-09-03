@@ -1,21 +1,23 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function StreamPlayer() {
-  const [platform, setPlatform] = useState<'twitch' | 'youtube'>('twitch')
+  const [platform, setPlatform] = useState<'twitch' | 'youtube'>('twitch');
+  const [twitchParent, setTwitchParent] = useState<string | null>(null);
 
-  // Twitch parent-Domain dynamisch bestimmen
-  let twitchParent = 'localhost';
-  if (typeof window !== 'undefined') {
-    const host = window.location.hostname;
-    // Vercel-Preview und Production Domains erlauben
-    if (host.endsWith('.vercel.app')) {
-      twitchParent = host;
-    } else if (host !== 'localhost') {
-      twitchParent = host;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const host = window.location.hostname;
+      if (host.endsWith('.vercel.app')) {
+        setTwitchParent(host);
+      } else if (host !== 'localhost') {
+        setTwitchParent(host);
+      } else {
+        setTwitchParent('localhost');
+      }
     }
-  }
+  }, []);
 
   return (
     <div className="bg-gray-800 rounded-lg p-6">
@@ -44,14 +46,18 @@ export default function StreamPlayer() {
           </button>
         </div>
       </div>
-      
+
       <div className="aspect-video bg-black rounded">
         {platform === 'twitch' ? (
-          <iframe
-            src={`https://player.twitch.tv/?channel=frankemotorsport&parent=${twitchParent}`}
-            className="w-full h-full rounded"
-            allowFullScreen
-          />
+          twitchParent ? (
+            <iframe
+              src={`https://player.twitch.tv/?channel=frankemotorsport&parent=${twitchParent}`}
+              className="w-full h-full rounded"
+              allowFullScreen
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-gray-400">Lade Twitch Player...</div>
+          )
         ) : (
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=PLhZym3bCWpAQXJ1m0TWxgI1LUwdwS3Qqu"
@@ -61,5 +67,5 @@ export default function StreamPlayer() {
         )}
       </div>
     </div>
-  )
+  );
 }
