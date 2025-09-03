@@ -24,7 +24,7 @@ export default function Home() {
         
         {/* Werbeplatz 1 - Banner unter Stream */}
         <AdSense 
-          adSlot="1234567890" 
+          adSlot="8938787528" 
           adFormat="horizontal"
           fullWidth={true}
           className="my-6"
@@ -37,7 +37,7 @@ export default function Home() {
         
         {/* Werbeplatz 2 - Banner am Ende */}
         <AdSense 
-          adSlot="0987654321" 
+          adSlot="6472406283" 
           adFormat="rectangle"
           className="mt-8"
         />
