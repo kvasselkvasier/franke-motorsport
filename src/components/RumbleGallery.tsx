@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-// YouTube API Key und Playlist-ID aus Umgebungsvariablen (API-Key als NEXT_PUBLIC_... für Client-Komponenten)
+// YouTube API Key und Playlist-ID aus Umgebungsvariablen (API-Key als NEXT_PUBLIC_... für Client-Komponenten) funzt
 const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || "";
 const PLAYLIST_ID = process.env.NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID || "PLhZym3bCWpAQo8LYnZyjHVShL2O0S3t3l";
 

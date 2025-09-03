@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className="w-full flex justify-center mb-8">
       <Image
-        src="/franke-motorsport-banner.png"
+        src="/franke-motorsport-banner.PNG"
         alt="Franke Motorsport Banner"
         width={1200}
         height={350}
