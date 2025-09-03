@@ -36,7 +36,7 @@ export default function AdSense({
           display: 'block',
           textAlign: 'center'
         }}
-        data-ad-client="ca-pub-XXXXXXXXX"
+        data-ad-client="ca-pub-2355675085639342"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
         data-full-width-responsive={fullWidth.toString()}
