@@ -1,8 +1,7 @@
 export default function DonateButton() {
   return (
-    <div className="bg-gray-800 rounded-lg p-6">
-      <h2 className="text-2xl font-bold mb-4">Support</h2>
-      
+    <section className="bg-gradient-to-br from-blue-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
+      <h2 className="text-2xl font-bold mb-4 text-blue-400">Support</h2>
       <div className="space-y-4">
         {/* PayPal Spenden Button */}
         <a
@@ -40,6 +39,6 @@ export default function DonateButton() {
           Jeder Support hilft dabei, besseren Content zu erstellen! 🏁
         </p>
       </div>
-    </div>
+    </section>
   )
 }

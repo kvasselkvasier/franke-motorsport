@@ -1,11 +1,9 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from 'react'
-
-export default function StreamPlayer() {
-  const [platform, setPlatform] = useState<'twitch' | 'youtube'>('twitch');
+export function TwitchPlayer() {
   const [twitchParent, setTwitchParent] = useState<string | null>(null);
-
+  const twitchChannel = 'frankemotorsport';
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const host = window.location.hostname;
@@ -18,54 +16,32 @@ export default function StreamPlayer() {
       }
     }
   }, []);
-
   return (
-    <div className="bg-gray-800 rounded-lg p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Live Stream</h2>
-        <div className="flex gap-2">
-          <button
-            onClick={() => setPlatform('twitch')}
-            className={`px-4 py-2 rounded ${
-              platform === 'twitch' 
-                ? 'bg-purple-600 text-white' 
-                : 'bg-gray-700 text-gray-300'
-            }`}
-          >
-            Twitch
-          </button>
-          <button
-            onClick={() => setPlatform('youtube')}
-            className={`px-4 py-2 rounded ${
-              platform === 'youtube' 
-                ? 'bg-red-600 text-white' 
-                : 'bg-gray-700 text-gray-300'
-            }`}
-          >
-            YouTube
-          </button>
-        </div>
-      </div>
+    <section className="bg-gradient-to-br from-purple-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
+      <h2 className="text-2xl font-bold mb-4 text-purple-400">Twitch Livestream</h2>
+      {twitchParent ? (
+        <iframe
+          src={`https://player.twitch.tv/?channel=${twitchChannel}&parent=${twitchParent}`}
+          className="w-full aspect-video rounded mb-4 border-2 border-purple-600"
+          allowFullScreen
+        />
+      ) : (
+        <div className="w-full aspect-video flex items-center justify-center text-gray-400 mb-4">Lade Twitch Player...</div>
+      )}
+    </section>
+  );
+}
 
-      <div className="aspect-video bg-black rounded">
-        {platform === 'twitch' ? (
-          twitchParent ? (
-            <iframe
-              src={`https://player.twitch.tv/?channel=frankemotorsport&parent=${twitchParent}`}
-              className="w-full h-full rounded"
-              allowFullScreen
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-400">Lade Twitch Player...</div>
-          )
-        ) : (
-          <iframe
-            src="https://www.youtube.com/embed/videoseries?list=PLhZym3bCWpAQXJ1m0TWxgI1LUwdwS3Qqu"
-            className="w-full h-full rounded"
-            allowFullScreen
-          />
-        )}
-      </div>
-    </div>
+export function YoutubePlayer() {
+  const youtubePlaylist = 'PLhZym3bCWpAQXJ1m0TWxgI1LUwdwS3Qqu';
+  return (
+    <section className="bg-gradient-to-br from-red-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
+      <h2 className="text-2xl font-bold mb-4 text-red-400">YouTube Playlist</h2>
+      <iframe
+        src={`https://www.youtube.com/embed/videoseries?list=${youtubePlaylist}`}
+        className="w-full aspect-video rounded mb-4 border-2 border-red-600"
+        allowFullScreen
+      />
+    </section>
   );
 }

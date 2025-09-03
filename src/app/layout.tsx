@@ -9,24 +9,30 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Franke Motorsport | Simracing & Kartsport Streamer",
-  description: "Erlebe spannende Simracing und Kartsport Action mit Franke Motorsport. Live Streams auf Twitch, Videos auf YouTube. Jetzt folgen und supporten!",
-  keywords: "simracing, motorsport, kartsport, twitch streamer, gaming, racing, formula 1, gt3, iracing, assetto corsa",
+  title: "Franke Motorsport | Simracing, Kartsport & Livestreams",
+  description: "Franke Motorsport bietet Simracing, Kartsport, Livestreams, Tipps, Setups und Motorsport-Community. Jetzt Streams & Videos entdecken!",
+  keywords: "simracing, motorsport, kartsport, twitch streamer, gaming, racing, formula 1, gt3, iracing, assetto corsa, livestream, setup, community, youtube, esports, kart, motorsport blog, racing team",
   authors: [{ name: "Franke Motorsport" }],
   creator: "Franke Motorsport",
   publisher: "Franke Motorsport",
   metadataBase: new URL('https://franke-motorsport.vercel.app'),
   openGraph: {
-    title: "Franke Motorsport | Simracing & Kartsport Streamer",
-    description: "Erlebe spannende Simracing und Kartsport Action mit Franke Motorsport. Live Streams auf Twitch, Videos auf YouTube.",
+    title: "Franke Motorsport | Simracing, Kartsport & Livestreams",
+    description: "Franke Motorsport bietet Simracing, Kartsport, Livestreams, Tipps, Setups und Motorsport-Community.",
     url: 'https://franke-motorsport.vercel.app',
     siteName: 'Franke Motorsport',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/franke-motorsport-banner.png',
         width: 1200,
-        height: 630,
-        alt: 'Franke Motorsport',
+        height: 350,
+        alt: 'Franke Motorsport Banner',
+      },
+      {
+        url: '/franke-motorsport-logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Franke Motorsport Logo',
       },
     ],
     locale: 'de_DE',
@@ -34,10 +40,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Franke Motorsport | Simracing & Kartsport Streamer',
-    description: 'Erlebe spannende Simracing und Kartsport Action mit Franke Motorsport.',
+    title: 'Franke Motorsport | Simracing, Kartsport & Livestreams',
+    description: 'Franke Motorsport: Simracing, Kartsport, Livestreams, Tipps, Setups und Community.',
     creator: '@frankemotorsport',
-    images: ['/og-image.jpg'],
+    images: ['/franke-motorsport-banner.png'],
   },
   robots: {
     index: true,
@@ -86,25 +92,26 @@ export default function RootLayout({
           }}
         />
         
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/franke-motorsport-logo.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/franke-motorsport-logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
+              "@type": "Organization",
               "name": "Franke Motorsport",
               "url": "https://franke-motorsport.vercel.app",
+              "logo": "https://franke-motorsport.vercel.app/franke-motorsport-logo.png",
               "sameAs": [
                 "https://twitch.tv/frankemotorsport",
                 "https://youtube.com/@frankemotorsport"
               ],
-              "jobTitle": "Simracing & Kartsport Streamer",
-              "description": "Professioneller Simracing und Kartsport Content Creator"
+              "description": "Simracing, Kartsport, Livestreams, Tipps, Setups und Motorsport-Community."
             })
           }}
         />

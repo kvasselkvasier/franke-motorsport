@@ -27,8 +27,8 @@ export default function ShopLinks() {
   ]
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6">
-      <h2 className="text-2xl font-bold mb-4">Racing Shops</h2>
+    <section className="bg-gradient-to-br from-green-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
+      <h2 className="text-2xl font-bold mb-4 text-green-400">Racing Shops</h2>
       <div className="grid grid-cols-1 gap-3">
         {shopLinks.map((shop, index) => (
           <a
@@ -50,6 +50,6 @@ export default function ShopLinks() {
       <p className="text-xs text-gray-400 mt-4">
         * Affiliate Partner - Unterstützt den Kanal ohne Mehrkosten
       </p>
-    </div>
+    </section>
   )
 }
