@@ -1,14 +1,28 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
-// Trage hier deinen YouTube Data API Key und die Playlist-ID ein
-const YOUTUBE_API_KEY = "AIzaSyCRQ6JaCb-6-pCYg6Wr-LnrsJdKW1LZa9U";
-const PLAYLIST_ID = "PLhZym3bCWpAQo8LYnZyjHVShL2O0S3t3l";
+// YouTube API Key und Playlist-ID aus Umgebungsvariablen (API-Key als NEXT_PUBLIC_... für Client-Komponenten)
+const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || "";
+const PLAYLIST_ID = process.env.NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID || "PLhZym3bCWpAQo8LYnZyjHVShL2O0S3t3l";
 
 interface Video {
   id: string;
   title: string;
   thumbnail: string;
+}
+
+interface YouTubeApiSnippet {
+  resourceId: { videoId: string };
+  title: string;
+  thumbnails?: {
+    high?: { url: string };
+    default?: { url: string };
+  };
+}
+
+interface YouTubeApiItem {
+  snippet: YouTubeApiSnippet;
 }
 
 const YouTubePlaylistGallery = () => {
@@ -24,14 +38,18 @@ const YouTubePlaylistGallery = () => {
         );
         if (!res.ok) throw new Error("Fehler beim Laden der Playlist");
         const data = await res.json();
-        const vids = data.items.map((item: any) => ({
+        const vids = (data.items as YouTubeApiItem[]).map((item) => ({
           id: item.snippet.resourceId.videoId,
           title: item.snippet.title,
           thumbnail: item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.default?.url || "",
         }));
         setVideos(vids);
-      } catch (e: any) {
-        setError(e.message || "Unbekannter Fehler");
+      } catch (e) {
+        if (e instanceof Error) {
+          setError(e.message);
+        } else {
+          setError("Unbekannter Fehler");
+        }
       }
     }
     fetchVideos();
@@ -68,10 +86,14 @@ const YouTubePlaylistGallery = () => {
             className="block group text-left focus:outline-none"
             aria-label={`Video abspielen: ${video.title}`}
           >
-            <img
+            <Image
               src={video.thumbnail}
               alt={video.title}
+              width={320}
+              height={180}
               className="w-full h-36 md:h-40 lg:h-44 object-cover rounded-lg border-2 border-orange-300 group-hover:border-white transition"
+              unoptimized
+              priority={true}
             />
             <div className="mt-2 text-orange-50 text-xs md:text-sm font-semibold truncate">
               {video.title}

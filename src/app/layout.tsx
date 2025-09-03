@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 
@@ -75,22 +76,20 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2355675085639342"
           crossOrigin="anonymous"
         ></script>
-        
-        {/* Optional: Google Analytics - Ersetzen Sie GA_MEASUREMENT_ID */}
-        <script
-          async
+
+        {/* Google Analytics via next/script */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'GA_MEASUREMENT_ID');
-            `,
-          }}
+          strategy="afterInteractive"
         />
+        <Script id="ga-inline-script" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          `}
+        </Script>
         
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/franke-motorsport-logo.png" />

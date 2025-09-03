@@ -5,7 +5,6 @@ import YouTubePlaylistGallery from '@/components/RumbleGallery'
 import ShopLinks from '@/components/ShopLinks'
 import DonateButton from '@/components/DonateButton'
 import AdSense from '@/components/AdSense'
-import Logo from '@/components/Logo'
 import { useEffect } from 'react'
 // Animationen werden mit Tailwind CSS und eigenen Klassen umgesetzt
 
