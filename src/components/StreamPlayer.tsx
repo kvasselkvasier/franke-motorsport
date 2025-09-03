@@ -5,6 +5,18 @@ import { useState } from 'react'
 export default function StreamPlayer() {
   const [platform, setPlatform] = useState<'twitch' | 'youtube'>('twitch')
 
+  // Twitch parent-Domain dynamisch bestimmen
+  let twitchParent = 'localhost';
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    // Vercel-Preview und Production Domains erlauben
+    if (host.endsWith('.vercel.app')) {
+      twitchParent = host;
+    } else if (host !== 'localhost') {
+      twitchParent = host;
+    }
+  }
+
   return (
     <div className="bg-gray-800 rounded-lg p-6">
       <div className="flex justify-between items-center mb-4">
@@ -36,7 +48,7 @@ export default function StreamPlayer() {
       <div className="aspect-video bg-black rounded">
         {platform === 'twitch' ? (
           <iframe
-            src="https://player.twitch.tv/?channel=frankemotorsport&parent=localhost"
+            src={`https://player.twitch.tv/?channel=frankemotorsport&parent=${twitchParent}`}
             className="w-full h-full rounded"
             allowFullScreen
           />
