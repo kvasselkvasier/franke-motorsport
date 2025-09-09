@@ -1,5 +1,5 @@
 "use client";
-import { TwitchPlayer, YoutubePlayer } from '@/components/StreamPlayer'
+import { TwitchPlayer } from '@/components/StreamPlayer'
 import YouTubePlaylistGallery from '@/components/RumbleGallery'
 import ShopLinks from '@/components/ShopLinks'
 import DonateButton from '@/components/DonateButton'
