@@ -17,25 +17,25 @@ export default function Impressum() {
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Angaben gemäß § 5 TMG</h2>
           <p>
-            Max Mustermann<br />
-            Musterstraße 1<br />
-            12345 Musterstadt<br />
+            Michael Kersten<br />
+            Westernplan 27<br />
+            39108 Magdeburg<br />
             Deutschland
           </p>
         </section>
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Kontakt</h2>
           <p>
-            Telefon: 01234 / 567890<br />
-            E-Mail: info@franke-motorsport.de
+            Telefon: 0163 / 6658400<br />
+            E-Mail: webmaster@franke-motorsport.de
           </p>
         </section>
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
           <p>
-            Max Mustermann<br />
-            Musterstraße 1<br />
-            12345 Musterstadt
+            Michael Kersten<br />
+            Westernplan 27<br />
+            39108 Magdeburg
           </p>
         </section>
         <section className="mb-6">
@@ -56,7 +56,6 @@ export default function Impressum() {
             Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
           </p>
         </section>
-        <p className="text-xs text-gray-500 mt-8">Vorlage. Bitte mit Ihren echten Daten ersetzen!</p>
       </div>
     </main>
   )

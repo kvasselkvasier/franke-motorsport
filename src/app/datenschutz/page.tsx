@@ -1,0 +1,152 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Datenschutzerklärung | Franke Motorsport',
+  description: 'Datenschutzerklärung und Informationen zum Umgang mit personenbezogenen Daten bei Franke Motorsport.',
+  robots: {
+    index: true,
+    follow: false,
+  },
+};
+
+export default function Datenschutz() {
+  return (
+    <main className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        {/* Navigation zurück */}
+        <div className="mb-8">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Zurück zur Startseite
+          </Link>
+        </div>
+
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Datenschutzerklärung</h1>
+          <p className="text-gray-600 text-lg">
+            Informationen zum Umgang mit Ihren personenbezogenen Daten
+          </p>
+        </div>
+
+        {/* Content */}
+        <div className="prose max-w-none">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Verantwortlicher</h2>
+            <p className="text-gray-700 mb-4">
+              Verantwortlicher für die Datenverarbeitung auf dieser Website ist:
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-gray-800">
+                Michael Kersten<br />
+                Franke Motorsport<br />
+                E-Mail: webmaster@franke-motorsport.de
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Allgemeine Hinweise</h2>
+            <p className="text-gray-700 mb-4">
+              Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten 
+              passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie 
+              persönlich identifiziert werden können.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Datenerfassung auf dieser Website</h2>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Server-Log-Dateien</h3>
+            <p className="text-gray-700 mb-4">
+              Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, 
+              die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
+              <li>Browsertyp und Browserversion</li>
+              <li>Verwendetes Betriebssystem</li>
+              <li>Referrer URL</li>
+              <li>Hostname des zugreifenden Rechners</li>
+              <li>Uhrzeit der Serveranfrage</li>
+              <li>IP-Adresse</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. 
+              Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Cookies</h3>
+            <p className="text-gray-700 mb-4">
+              Diese Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. 
+              Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Externe Dienste</h2>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Google AdSense</h3>
+            <p className="text-gray-700 mb-4">
+              Diese Website verwendet Google AdSense, einen Dienst zum Einbinden von Werbeanzeigen der Google Ireland Limited. 
+              AdSense verwendet Cookies und Web Beacons (unsichtbare Grafiken), die eine Analyse der Benutzung der Website ermöglichen.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Twitch</h3>
+            <p className="text-gray-700 mb-4">
+              Wir binden Videos und Streams der Plattform Twitch ein. Anbieter ist die Twitch Interactive, Inc., 
+              350 Bush Street, 2nd Floor, San Francisco, CA 94104, USA.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">YouTube</h3>
+            <p className="text-gray-700 mb-4">
+              Wir binden Videos der Plattform YouTube ein. Anbieter ist die Google Ireland Limited, 
+              Gordon House, Barrow Street, Dublin 4, Irland.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Ihre Rechte</h2>
+            <p className="text-gray-700 mb-4">
+              Sie haben jederzeit das Recht:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
+              <li>unentgeltlich Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten</li>
+              <li>Berichtigung unrichtiger oder unvollständiger Daten zu verlangen</li>
+              <li>Löschung Ihrer bei uns gespeicherten Daten zu verlangen</li>
+              <li>Einschränkung der Datenverarbeitung zu verlangen</li>
+              <li>der Datenverarbeitung zu widersprechen</li>
+              <li>Datenübertragbarkeit zu verlangen</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Kontakt</h2>
+            <p className="text-gray-700 mb-4">
+              Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-gray-800">
+                E-Mail: webmaster@franke-motorsport.de<br />
+                Betreff: Datenschutzanfrage
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <p className="text-blue-800 text-sm">
+              <strong>Stand:</strong> September 2025<br />
+              Diese Datenschutzerklärung kann jederzeit angepasst werden. 
+              Die aktuelle Version finden Sie immer auf dieser Seite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
