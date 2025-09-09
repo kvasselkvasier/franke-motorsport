@@ -1,7 +1,6 @@
 {
   "name": "franke-motorsport",
   "version": 2,
-  "domains": ["franke-motorsport.de", "www.franke-motorsport.de"],
   "redirects": [
     {
       "source": "/(.*)",
@@ -11,17 +10,6 @@
         {
           "type": "host",
           "value": "franke-motorsport.vercel.app"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "destination": "https://franke-motorsport.de/$1", 
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "www.franke-motorsport.de"
         }
       ]
     }
