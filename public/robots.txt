@@ -11,6 +11,10 @@ Crawl-delay: 1
 User-agent: Googlebot
 Allow: /
 
+# Legal pages - allow indexing
+Allow: /impressum
+Allow: /datenschutz
+
 # Block access to development and config files
 Disallow: /_next/
 Disallow: /api/

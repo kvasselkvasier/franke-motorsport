@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     "simracing", "motorsport", "kartsport", "twitch streamer", "gaming", "racing", 
     "formula 1", "gt3", "iracing", "assetto corsa", "livestream", "setup", 
     "community", "youtube", "esports", "kart", "motorsport blog", "racing team",
-    "franke motorsport", "simracing deutschland", "kartsport livestream"
+    "franke motorsport", "simracing deutschland", "kartsport livestream",
+    "impressum", "datenschutz", "rechtliche hinweise"
   ],
   authors: [{ name: "Franke Motorsport" }],
   creator: "Franke Motorsport",
@@ -160,6 +161,18 @@ export default function RootLayout({
                       "position": 1,
                       "name": "Home",
                       "item": "https://franke-motorsport.de/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Impressum",
+                      "item": "https://franke-motorsport.de/impressum"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "name": "Datenschutz",
+                      "item": "https://franke-motorsport.de/datenschutz"
                     }
                   ]
                 }
