@@ -1,0 +1,7 @@
+# Security.txt für Sicherheitsrichtlinien
+Contact: mailto:security@franke-motorsport.de
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://franke-motorsport.vercel.app/pgp-key.txt
+Acknowledgments: https://franke-motorsport.vercel.app/security-acknowledgments
+Policy: https://franke-motorsport.vercel.app/security-policy
+Hiring: https://franke-motorsport.vercel.app/careers

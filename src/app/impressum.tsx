@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Impressum | Franke Motorsport',
+  description: 'Impressum und rechtliche Angaben von Franke Motorsport - Simracing, Kartsport und Livestreams.',
+  robots: {
+    index: true,
+    follow: false,
+  },
+};
+
 export default function Impressum() {
   return (
     <main className="min-h-screen bg-gray-900 text-white p-8">

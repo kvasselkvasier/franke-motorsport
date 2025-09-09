@@ -1,3 +1,30 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.franke-motorsport.de/sitemap.xml
+
+# Sitemap
+Sitemap: https://franke-motorsport.de/sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 1
+
+# AdSense verification
+User-agent: Googlebot
+Allow: /
+
+# Block access to development and config files
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.well-known/
+
+# SEO optimized directives
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

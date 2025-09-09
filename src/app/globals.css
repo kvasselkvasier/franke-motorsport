@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/* Professional Motorsport Color Palette */
+:root {
+  /* Primary Professional Colors */
+  --primary-black: #0A0A0A;
+  --primary-white: #FFFFFF;
+  --primary-gray: #F8F9FA;
+  --secondary-gray: #E9ECEF;
+  --dark-gray: #495057;
+  --border-gray: #DEE2E6;
+  
+  /* Professional Accents */
+  --accent-blue: #2B5CE6;
+  --accent-blue-dark: #1E47B8;
+  --motorsport-gold: #C9A96E;
+  --motorsport-silver: #B8BCC8;
+  
+  /* Text Colors */
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+  --text-muted: #868E96;
+  
+  /* Status Colors */
+  --success-green: #51CF66;
+  --warning-orange: #FF922B;
+  --error-red: #FF6B6B;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,18 +35,161 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--primary-white);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
-/* Scroll Progress Bar */
+
+/* Professional Typography */
+.font-heading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+/* Professional Gradients */
+.professional-gradient {
+  background: linear-gradient(135deg, var(--primary-gray) 0%, var(--secondary-gray) 100%);
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-dark) 100%);
+}
+
+.motorsport-gradient {
+  background: linear-gradient(135deg, var(--motorsport-gold) 0%, var(--motorsport-silver) 100%);
+}
+
+/* Professional Button Styles */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: var(--dark-gray);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(73, 80, 87, 0.25);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-gray);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-gray);
+  border-color: var(--dark-gray);
+}
+
+/* Professional Card Styles */
+.professional-card {
+  background: var(--primary-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.professional-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.professional-section {
+  background: var(--primary-gray);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Racing Card Hover Effects */
+.racing-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.racing-card:hover {
+  border-color: var(--racing-red);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+}
+
+/* Pulsing Animation for Live Elements */
+.pulse-live {
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+}
+
+/* Speed Lines Animation */
+.speed-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.speed-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: speed-sweep 3s ease-in-out infinite;
+}
+
+@keyframes speed-sweep {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
 #scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
-  height: 4px;
-  background: linear-gradient(90deg, #dc2626 0%, #4f46e5 100%);
+  height: 2px;
+  background: var(--dark-gray);
   z-index: 50;
-  transition: width 0.2s cubic-bezier(0.4,0,0.2,1);
+  transition: width 0.25s ease-out;
   pointer-events: none;
+  box-shadow: 0 0 8px rgba(73, 80, 87, 0.3);
 }
 
 .racing-gradient-dark {
@@ -98,51 +268,159 @@ body {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: var(--primary-gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dc2626;
-  border-radius: 4px;
+  background: var(--dark-gray);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b91c1c;
+  background: var(--accent-blue);
 }
 
 /* Button Hover Effects */
 .btn-racing {
-  background: #dc2626;
+  background: var(--racing-red);
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 8px;
   transition: all 0.3s ease;
   transform: scale(1);
+  border: 2px solid transparent;
 }
 
 .btn-racing:hover {
   background: #b91c1c;
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+  border-color: var(--victory-gold);
 }
 
-.btn-racing-secondary {
-  background: #374151;
+.btn-speed {
+  background: var(--speed-blue);
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 8px;
   transition: all 0.3s ease;
   transform: scale(1);
+  border: 2px solid transparent;
+}
+
+.btn-speed:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
+  border-color: var(--victory-gold);
+}
+
+.btn-victory {
+  background: var(--victory-gold);
+  color: black;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border: 2px solid transparent;
+}
+
+.btn-victory:hover {
+  background: #d97706;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+  border-color: var(--racing-red);
+}
+
+.btn-racing-secondary {
+  background: var(--carbon-gray);
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border: 2px solid transparent;
 }
 
 .btn-racing-secondary:hover {
   background: #4b5563;
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(55, 65, 81, 0.3);
+  border-color: var(--victory-gold);
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--racing-red), var(--victory-gold));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Enhanced Racing Text Shadow */
+.racing-text-shadow {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Enhanced Racing Box Shadow */
+.racing-shadow {
+  box-shadow: 
+    0 0 30px rgba(220, 38, 38, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Racing Card Hover Effects */
+.racing-card-hover {
+  transition: all 0.3s ease;
+  background: rgba(55, 65, 81, 0.5);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.racing-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px rgba(220, 38, 38, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--victory-gold);
+  background: rgba(55, 65, 81, 0.7);
+}
+
+/* Delay classes for animations */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
 }

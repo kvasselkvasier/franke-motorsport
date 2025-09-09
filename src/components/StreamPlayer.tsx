@@ -17,31 +17,31 @@ export function TwitchPlayer() {
     }
   }, []);
   return (
-    <section className="bg-gradient-to-br from-purple-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
-      <h2 className="text-2xl font-bold mb-4 text-purple-400">Twitch Livestream</h2>
+    <div>
+      <h2 className="text-2xl font-heading font-semibold mb-6 text-gray-900">Live Stream</h2>
       {twitchParent ? (
         <iframe
           src={`https://player.twitch.tv/?channel=${twitchChannel}&parent=${twitchParent}`}
-          className="w-full aspect-video rounded mb-4 border-2 border-purple-600"
+          className="w-full aspect-video rounded-lg"
           allowFullScreen
         />
       ) : (
-        <div className="w-full aspect-video flex items-center justify-center text-gray-400 mb-4">Lade Twitch Player...</div>
+        <div className="w-full aspect-video flex items-center justify-center text-gray-500 border border-gray-200 rounded-lg">Lade Twitch Player...</div>
       )}
-    </section>
+    </div>
   );
 }
 
 export function YoutubePlayer() {
   const youtubePlaylist = 'PLhZym3bCWpAQXJ1m0TWxgI1LUwdwS3Qqu';
   return (
-    <section className="bg-gradient-to-br from-red-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
-      <h2 className="text-2xl font-bold mb-4 text-red-400">YouTube Playlist</h2>
+    <div className="professional-card">
+      <h2 className="text-2xl font-heading font-semibold mb-6 text-gray-900">YouTube Playlist</h2>
       <iframe
         src={`https://www.youtube.com/embed/videoseries?list=${youtubePlaylist}`}
-        className="w-full aspect-video rounded mb-4 border-2 border-red-600"
+        className="w-full aspect-video rounded-lg border border-gray-200"
         allowFullScreen
       />
-    </section>
+    </div>
   );
 }

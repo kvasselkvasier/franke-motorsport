@@ -27,27 +27,27 @@ export default function ShopLinks() {
   ]
 
   return (
-    <section className="bg-gradient-to-br from-green-900/60 to-gray-800/80 rounded-lg p-6 w-full mb-8">
-      <h2 className="text-2xl font-bold mb-4 text-green-400">Racing Shops</h2>
-      <div className="grid grid-cols-1 gap-3">
+    <section id="shop" className="professional-section">
+      <h2 className="text-3xl font-heading font-semibold mb-8 text-gray-900">Racing Shops</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {shopLinks.map((shop, index) => (
           <a
             key={index}
             href={shop.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors border-l-4 border-red-500"
+            className="professional-card flex items-center gap-4 hover:shadow-lg transition-all duration-200"
           >
-            <span className="text-2xl">{shop.icon}</span>
+            <span className="text-3xl">{shop.icon}</span>
             <div className="flex-1">
-              <h3 className="font-semibold text-white">{shop.name}</h3>
-              <p className="text-gray-400 text-sm">{shop.description}</p>
+              <h3 className="font-heading font-medium text-gray-900 text-lg">{shop.name}</h3>
+              <p className="text-gray-600">{shop.description}</p>
             </div>
-            <span className="text-red-500 font-bold">→</span>
+            <span className="text-blue-600 font-medium text-xl">→</span>
           </a>
         ))}
       </div>
-      <p className="text-xs text-gray-400 mt-4">
+      <p className="text-xs text-gray-500 mt-6 text-center">
         * Affiliate Partner - Unterstützt den Kanal ohne Mehrkosten
       </p>
     </section>
