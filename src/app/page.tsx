@@ -1,16 +1,25 @@
 "use client";
 import { TwitchPlayer } from '@/components/StreamPlayer'
 import YouTubePlaylistGallery from '@/components/RumbleGallery'
-import ShopLinks from '@/components/ShopLinks'
+// import ShopLinks from '@/components/ShopLinks' // Temporär ausgeblendet
 import DonateButton from '@/components/DonateButton'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 // Animationen werden mit Tailwind CSS und eigenen Klassen umgesetzt
 
 export default function Home() {
-  // Scrollbar-Progressbar Animation
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Hydration Fix - nur nach dem Mounting ausführen
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Scrollbar-Progressbar Animation - nur nach Hydration
+  useEffect(() => {
+    if (!isMounted) return;
+    
     const handleScroll = () => {
       const scrollBar = document.getElementById('scroll-progress-bar');
       if (!scrollBar) return;
@@ -19,9 +28,15 @@ export default function Home() {
       const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       scrollBar.style.width = percent + '%';
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMounted]);
+
+  // Verhindere Hydration-Fehler durch frühe Rückkehr
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -91,7 +106,8 @@ export default function Home() {
         
         <DonateButton />
         
-        <ShopLinks />
+        {/* ShopLinks temporär ausgeblendet - Code beibehalten für spätere Aktivierung */}
+        {/* <ShopLinks /> */}
         
       </div>
       <Footer />

@@ -1,17 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const navItems = [
     { href: "#about", label: "Über uns" },
     { href: "#streams", label: "Live Stream" },
     { href: "#videos", label: "Videos" },
     { href: "#support", label: "Support" },
-    { href: "#shop", label: "Shop" },
+    // { href: "#shop", label: "Shop" }, // Temporär ausgeblendet
   ];
+
+  if (!isMounted) {
+    return (
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-2">
+              <span className="text-xl font-bold text-gray-900">Franke Motorsport</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">

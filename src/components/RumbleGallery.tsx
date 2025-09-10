@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-// YouTube API Key und Playlist-ID aus Umgebungsvariablen (API-Key als NEXT_PUBLIC_... für Client-Komponenten) funzt
+// YouTube API Key und Playlist-ID aus Umgebungsvariablen
 const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || "";
 const PLAYLIST_ID = process.env.NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID || "PLhZym3bCWpAQo8LYnZyjHVShL2O0S3t3l";
 
@@ -25,11 +25,18 @@ interface YouTubeApiItem {
   snippet: YouTubeApiSnippet;
 }
 
-const YouTubePlaylistGallery = () => {
+export default function YouTubePlaylistGallery() {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     async function fetchVideos() {
       // Fallback-Videos wenn API-Key nicht verfügbar ist
       const fallbackVideos: Video[] = [
@@ -77,8 +84,25 @@ const YouTubePlaylistGallery = () => {
         setVideos(fallbackVideos);
       }
     }
+    
     fetchVideos();
-  }, []);
+  }, [isMounted]);
+
+  if (!isMounted) {
+    return (
+      <section id="videos" className="professional-section">
+        <h2 className="text-3xl font-heading font-semibold mb-8 text-gray-900">YouTube Videos</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="professional-card p-3">
+              <div className="aspect-video bg-gray-200 rounded-lg animate-pulse mb-3"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="videos" className="professional-section">
@@ -118,7 +142,7 @@ const YouTubePlaylistGallery = () => {
                 height={180}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 unoptimized
-                priority={true}
+                priority={false}
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
                 <div className="w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center opacity-80 group-hover:opacity-100 transition-all">
@@ -134,6 +158,4 @@ const YouTubePlaylistGallery = () => {
       </div>
     </section>
   );
-};
-
-export default YouTubePlaylistGallery;
+}
