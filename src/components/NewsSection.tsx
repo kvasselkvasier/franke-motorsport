@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from './NewsSection.module.css';
 
 interface NewsItem {
@@ -34,16 +34,7 @@ export default function NewsSection() {
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (!isMounted) return;
-    
-    fetchNews();
-    // Auto-refresh every 30 minutes
-    const interval = setInterval(fetchNews, 30 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, [isMounted, selectedCategory]);
-
-  const fetchNews = async () => {
+  const fetchNews = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -69,7 +60,16 @@ export default function NewsSection() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    if (!isMounted) return;
+    
+    fetchNews();
+    // Auto-refresh every 30 minutes
+    const interval = setInterval(fetchNews, 30 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [isMounted, fetchNews]);
 
   const categories = [
     { value: 'all', label: 'Alle News' },

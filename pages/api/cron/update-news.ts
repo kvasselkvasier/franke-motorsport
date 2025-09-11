@@ -11,8 +11,17 @@ interface CronResponse {
 interface NewsApiResponse {
   success: boolean;
   count: number;
-  data: any[];
+  data: NewsItem[];
   lastUpdated: string;
+}
+
+interface NewsItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  source: string;
+  category: string;
+  description: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<CronResponse>) {
@@ -64,11 +73,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       throw new Error(`News API returned status: ${response.status}`);
     }
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('❌ Cron job failed:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     res.status(500).json({ 
       success: false, 
-      error: error.message,
+      error: errorMessage,
       timestamp: new Date().toISOString()
     });
   }

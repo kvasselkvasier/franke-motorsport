@@ -28,11 +28,7 @@ interface ErrorResponse {
 
 type ApiResponse = NewsResponse | ErrorResponse;
 
-interface RSSFeed {
-  name: string;
-  url: string;
-  category: string;
-}
+// RSSFeed interface entfernt da nicht verwendet
 
 const parser = new Parser({
   customFields: {
@@ -91,22 +87,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         console.log(`Fetching: ${feedConfig.name}`);
         const feed = await parser.parseURL(feedConfig.url);
         
-        return feed.items.slice(0, 10).map((item: any) => ({
-          title: item.title || 'Untitled',
-          link: item.link || '#',
-          pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-          source: feedConfig.name,
-          category: feedConfig.category,
-          description: (item.contentSnippet || item.content || '').slice(0, 200) + '...',
-          // Rechtssicher: Nur Auszug verwenden
-          excerpt: (item.contentSnippet || item.content || '').slice(0, 150) + '...',
-          // Für bessere SEO
-          guid: item.guid || item.link,
-          // Datum normalisieren
-          timestamp: new Date(item.pubDate || item.isoDate || Date.now()).getTime()
-        }));
-      } catch (error: any) {
-        console.error(`Error fetching ${feedConfig.name}:`, error.message);
+        return feed.items.slice(0, 10).map((item: unknown) => {
+          // Type guard für RSS item properties
+          const rssItem = item as Record<string, unknown>;
+          return {
+            title: (rssItem.title as string) || 'Untitled',
+            link: (rssItem.link as string) || '#',
+            pubDate: (rssItem.pubDate as string) || (rssItem.isoDate as string) || new Date().toISOString(),
+            source: feedConfig.name,
+            category: feedConfig.category,
+            description: ((rssItem.contentSnippet as string) || (rssItem.content as string) || '').slice(0, 200) + '...',
+            // Rechtssicher: Nur Auszug verwenden
+            excerpt: ((rssItem.contentSnippet as string) || (rssItem.content as string) || '').slice(0, 150) + '...',
+            // Für bessere SEO
+            guid: (rssItem.guid as string) || (rssItem.link as string),
+            // Datum normalisieren
+            timestamp: new Date((rssItem.pubDate as string) || (rssItem.isoDate as string) || Date.now()).getTime()
+          } as NewsItem;
+        });
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.error(`Error fetching ${feedConfig.name}:`, errorMessage);
         return [];
       }
     });
@@ -140,11 +141,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       disclaimer: 'News aggregiert von öffentlichen RSS-Feeds. Alle Rechte bei den ursprünglichen Quellen.'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
     console.error('News API Error:', error);
     res.status(500).json({ 
       error: 'Failed to fetch news',
-      message: error.message 
+      message: errorMessage 
     });
   }
 }
