@@ -2,11 +2,31 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Datenschutzerklärung | Franke Motorsport',
-  description: 'Datenschutzerklärung und Informationen zum Umgang mit personenbezogenen Daten bei Franke Motorsport.',
+  title: 'Datenschutzerklärung | Franke Motorsport - DSGVO konform',
+  description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport: Transparente Informationen zum Umgang mit personenbezogenen Daten, Cookies und Analytics.',
+  keywords: ['datenschutz', 'dsgvo', 'privacy', 'franke motorsport', 'personenbezogene daten', 'cookies', 'datenschutzerklärung'],
   robots: {
     index: true,
     follow: false,
+    googleBot: {
+      index: true,
+      follow: false,
+    },
+  },
+  openGraph: {
+    title: 'Datenschutzerklärung | Franke Motorsport',
+    description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport - Transparent und nutzerfreundlich.',
+    url: 'https://franke-motorsport.de/datenschutz',
+    type: 'website',
+    locale: 'de_DE',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Datenschutzerklärung | Franke Motorsport',
+    description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport.',
+  },
+  alternates: {
+    canonical: 'https://franke-motorsport.de/datenschutz',
   },
 };
 
@@ -90,6 +110,26 @@ export default function Datenschutz() {
 
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Externe Dienste</h2>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">RSS-Feeds und News-Aggregation</h3>
+            <p className="text-gray-700 mb-4">
+              Diese Website aggregiert öffentlich verfügbare RSS-Feeds von externen Motorsport-Websites. 
+              Dabei werden keine personenbezogenen Daten übertragen oder gespeichert. Die Inhalte werden 
+              automatisch abgerufen und angezeigt, ohne dass eine Verbindung zwischen Ihrem Besuch und 
+              den externen Quellen hergestellt wird.
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Verwendete RSS-Quellen:</strong>
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
+              <li>Motorsport.com - öffentlicher RSS-Feed</li>
+              <li>RaceFans.net - öffentlicher RSS-Feed</li>
+              <li>Reddit (r/simracing, r/karting) - öffentliche JSON-API</li>
+            </ul>
+            <p className="text-gray-700 mb-4">
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der 
+              Bereitstellung aktueller Motorsport-Informationen)
+            </p>
             
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Google AdSense</h3>
             <p className="text-gray-700 mb-4">

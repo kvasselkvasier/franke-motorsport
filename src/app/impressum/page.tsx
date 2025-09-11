@@ -2,11 +2,31 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Impressum | Franke Motorsport',
-  description: 'Impressum und rechtliche Angaben von Franke Motorsport - Simracing, Kartsport und Livestreams.',
+  title: 'Impressum | Franke Motorsport - Rechtliche Angaben',
+  description: 'Vollständiges Impressum von Franke Motorsport: Rechtliche Angaben, Kontaktdaten und Verantwortlichkeiten für Simracing, Kartsport und Motorsport-Content.',
+  keywords: ['impressum', 'franke motorsport', 'rechtliche angaben', 'kontakt', 'verantwortlich', 'motorsport', 'simracing', 'kartsport'],
   robots: {
     index: true,
     follow: false,
+    googleBot: {
+      index: true,
+      follow: false,
+    },
+  },
+  openGraph: {
+    title: 'Impressum | Franke Motorsport',
+    description: 'Rechtliche Angaben und Kontaktinformationen von Franke Motorsport - Deutschlands Premium Motorsport Team.',
+    url: 'https://franke-motorsport.de/impressum',
+    type: 'website',
+    locale: 'de_DE',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Impressum | Franke Motorsport',
+    description: 'Rechtliche Angaben von Franke Motorsport - Premium Simracing & Kartsport Team.',
+  },
+  alternates: {
+    canonical: 'https://franke-motorsport.de/impressum',
   },
 };
 
@@ -108,6 +128,31 @@ export default function Impressum() {
               gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden 
               die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet.
             </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">RSS-Feeds und externe Inhalte</h2>
+            <p className="text-gray-700 mb-4">
+              Diese Website aggregiert Nachrichten aus öffentlich verfügbaren RSS-Feeds von Motorsport-Websites. 
+              Alle Rechte an den aggregierten Inhalten liegen bei den ursprünglichen Urhebern und Quellen.
+            </p>
+            
+            <h3 className="text-lg font-semibold text-gray-800 mb-3">Verwendete News-Quellen:</h3>
+            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
+              <li><strong>Motorsport.com</strong> - <a href="https://www.motorsport.com" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">www.motorsport.com</a></li>
+              <li><strong>RaceFans</strong> - <a href="https://www.racefans.net" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">www.racefans.net</a></li>
+              <li><strong>Reddit Sim Racing</strong> - <a href="https://www.reddit.com/r/simracing" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">reddit.com/r/simracing</a></li>
+              <li><strong>Reddit Karting</strong> - <a href="https://www.reddit.com/r/karting" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">reddit.com/r/karting</a></li>
+            </ul>
+            
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+              <p className="text-orange-800 text-sm">
+                <strong>Rechtlicher Hinweis zu RSS-Feeds:</strong> Wir nutzen ausschließlich öffentlich verfügbare RSS-Feeds 
+                und zeigen nur kurze Auszüge der Artikel an. Alle vollständigen Artikel und Urheberrechte verbleiben 
+                bei den ursprünglichen Quellen. Die Nutzung erfolgt zu Informationszwecken und unter Beachtung des 
+                Fair-Use-Prinzips. Bei Beanstandungen kontaktieren Sie uns bitte umgehend.
+              </p>
+            </div>
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

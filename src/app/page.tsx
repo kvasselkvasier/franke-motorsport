@@ -5,6 +5,7 @@ import YouTubePlaylistGallery from '@/components/RumbleGallery'
 import DonateButton from '@/components/DonateButton'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import NewsSection from '@/components/NewsSection'
 import { useEffect, useState } from 'react'
 // Animationen werden mit Tailwind CSS und eigenen Klassen umgesetzt
 
@@ -103,6 +104,9 @@ export default function Home() {
         
         {/* YouTube Video Gallery */}
         <YouTubePlaylistGallery />
+        
+        {/* News Section */}
+        <NewsSection />
         
         <DonateButton />
         

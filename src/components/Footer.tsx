@@ -12,6 +12,7 @@ const Footer = () => {
               <li><a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Über uns</a></li>
               <li><a href="#streams" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Live Streams</a></li>
               <li><a href="#videos" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Videos</a></li>
+              <li><a href="#news" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">News</a></li>
               <li><a href="#support" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Support</a></li>
               {/* <li><a href="#shop" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Shop</a></li> */} {/* Temporär ausgeblendet */}
             </ul>

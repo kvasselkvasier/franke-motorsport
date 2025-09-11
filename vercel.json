@@ -1,6 +1,12 @@
 {
   "name": "franke-motorsport",
   "version": 2,
+  "crons": [
+    {
+      "path": "/api/cron/update-news",
+      "schedule": "0 */2 * * *"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
@@ -20,6 +26,12 @@
   "functions": {
     "app/api/*/route.ts": {
       "maxDuration": 30
+    },
+    "pages/api/news.js": {
+      "maxDuration": 30
+    },
+    "pages/api/cron/update-news.js": {
+      "maxDuration": 60
     }
   },
   "headers": [

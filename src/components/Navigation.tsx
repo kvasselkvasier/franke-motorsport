@@ -14,6 +14,7 @@ const Navigation = () => {
     { href: "#about", label: "Über uns" },
     { href: "#streams", label: "Live Stream" },
     { href: "#videos", label: "Videos" },
+    { href: "#news", label: "News" },
     { href: "#support", label: "Support" },
     // { href: "#shop", label: "Shop" }, // Temporär ausgeblendet
   ];

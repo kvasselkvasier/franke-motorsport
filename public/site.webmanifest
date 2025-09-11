@@ -1,36 +1,110 @@
 {
-  "name": "Franke Motorsport",
+  "name": "Franke Motorsport - Premium Simracing & Kartsport",
   "short_name": "FrankeMS",
+  "description": "🏁 Deutschlands führende Motorsport-Community: Live Simracing Streams, Kartsport Action, aktuelle News & professionelle Setup-Guides.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
   "background_color": "#18181b",
   "theme_color": "#6366f1",
-  "description": "Franke Motorsport bietet Simracing, Kartsport, Livestreams, Tipps, Setups und Motorsport-Community.",
   "lang": "de",
-  "scope": "/",
-  "orientation": "portrait-primary",
-  "categories": ["sports", "entertainment", "games"],
+  "dir": "ltr",
+  "categories": ["sports", "entertainment", "games", "lifestyle", "social"],
+  "shortcuts": [
+    {
+      "name": "Live Stream",
+      "short_name": "Stream",
+      "description": "Direkt zum Twitch Live Stream",
+      "url": "https://twitch.tv/frankemotorsport",
+      "icons": [
+        {
+          "src": "/franke-motorsport-logo.PNG",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Aktuelle News",
+      "short_name": "News",
+      "description": "Motorsport News und Updates",
+      "url": "/#news",
+      "icons": [
+        {
+          "src": "/franke-motorsport-logo.PNG",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "YouTube Channel",
+      "short_name": "YouTube",
+      "description": "Setup-Guides und Videos",
+      "url": "https://youtube.com/@frankemotorsport",
+      "icons": [
+        {
+          "src": "/franke-motorsport-logo.PNG",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
-      "src": "/franke-motorsport-logo.png",
+      "src": "/franke-motorsport-logo.PNG",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
+      "src": "/franke-motorsport-logo.PNG",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/franke-motorsport-logo.PNG",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/franke-motorsport-logo.PNG",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/favicon.ico",
-      "sizes": "32x32",
-      "type": "image/x-icon"
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
     }
   ],
   "screenshots": [
     {
-      "src": "/franke-motorsport-banner.png",
+      "src": "/franke-motorsport-banner.PNG",
       "sizes": "1200x350",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Franke Motorsport Homepage Desktop"
     }
   ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://franke-motorsport.de"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

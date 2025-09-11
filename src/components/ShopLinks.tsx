@@ -40,7 +40,7 @@ export default function ShopLinks() {
           >
             <span className="text-3xl">{shop.icon}</span>
             <div className="flex-1">
-              <h3 className="font-heading font-medium text-gray-900 text-lg">{shop.name}</h3>
+              <h3 className="font-heading font-medium text-lg mb-2 text-gray-900">{shop.name}</h3>
               <p className="text-gray-600">{shop.description}</p>
             </div>
             <span className="text-blue-600 font-medium text-xl">→</span>

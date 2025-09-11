@@ -27,7 +27,7 @@ export function TwitchPlayer() {
   if (!isMounted) {
     return (
       <div>
-        <h2 className="text-2xl font-heading font-semibold mb-6 text-gray-900">Live Stream</h2>
+        <h2 className="text-3xl font-heading font-semibold mb-8 text-gray-900">Live Stream</h2>
         <div className="w-full aspect-video rounded-lg bg-gray-200 animate-pulse flex items-center justify-center">
           <span className="text-gray-500">Loading...</span>
         </div>
@@ -36,7 +36,7 @@ export function TwitchPlayer() {
   }
   return (
     <div>
-      <h2 className="text-2xl font-heading font-semibold mb-6 text-gray-900">Live Stream</h2>
+      <h2 className="text-3xl font-heading font-semibold mb-8 text-gray-900">Live Stream</h2>
       {twitchParent ? (
         <iframe
           src={`https://player.twitch.tv/?channel=${twitchChannel}&parent=${twitchParent}`}
@@ -54,7 +54,7 @@ export function YoutubePlayer() {
   const youtubePlaylist = 'PLhZym3bCWpAQXJ1m0TWxgI1LUwdwS3Qqu';
   return (
     <div className="professional-card">
-      <h2 className="text-2xl font-heading font-semibold mb-6 text-gray-900">YouTube Playlist</h2>
+      <h2 className="text-3xl font-heading font-semibold mb-8 text-gray-900">YouTube Playlist</h2>
       <iframe
         src={`https://www.youtube.com/embed/videoseries?list=${youtubePlaylist}`}
         className="w-full aspect-video rounded-lg border border-gray-200"
