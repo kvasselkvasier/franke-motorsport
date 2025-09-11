@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  typescript: {
+    // Ignoriere Type-Checking Fehler während des Builds
+    ignoreBuildErrors: false,
+  },
+  typedRoutes: true,
   async redirects() {
     return [
       // Redirect von vercel.app zur Hauptdomain
