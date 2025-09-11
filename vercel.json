@@ -4,7 +4,7 @@
   "crons": [
     {
       "path": "/api/cron/update-news",
-      "schedule": "0 */2 * * *"
+      "schedule": "0 8 * * *"
     }
   ],
   "redirects": [
@@ -27,10 +27,10 @@
     "app/api/*/route.ts": {
       "maxDuration": 30
     },
-    "pages/api/news.js": {
+    "pages/api/news.ts": {
       "maxDuration": 30
     },
-    "pages/api/cron/update-news.js": {
+    "pages/api/cron/update-news.ts": {
       "maxDuration": 60
     }
   },

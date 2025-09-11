@@ -16,11 +16,16 @@ interface NewsApiResponse {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<CronResponse>) {
-  // Überprüfe Autorisierung (Vercel Cron Secret)
-  if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
+  // Überprüfe Autorisierung (Vercel Cron Secret oder lokaler Test)
+  const authHeader = req.headers.authorization;
+  const cronSecret = process.env.CRON_SECRET;
+  
+  // Für Hobby Plan: Erlaube auch Requests ohne Secret für manuelles Testen
+  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+    console.log('❌ Unauthorized cron request');
     return res.status(401).json({ 
       success: false, 
-      message: 'Unauthorized',
+      message: 'Unauthorized - Invalid or missing cron secret',
       timestamp: new Date().toISOString()
     });
   }
