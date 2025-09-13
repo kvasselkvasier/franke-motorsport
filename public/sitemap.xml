@@ -16,7 +16,7 @@
   <!-- Homepage - Höchste Priorität -->
   <url>
     <loc>https://franke-motorsport.de/</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -34,7 +34,7 @@
   <!-- News API - Hochfrequenter Content -->
   <url>
     <loc>https://franke-motorsport.de/api/news</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -42,49 +42,22 @@
   <!-- Legal Pages - Wichtig für Vertrauen -->
   <url>
     <loc>https://franke-motorsport.de/impressum</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://franke-motorsport.de/datenschutz</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- External Social Media Presence - Für Brand Authority -->
-  <url>
-    <loc>https://twitch.tv/frankemotorsport</loc>
-    <lastmod>2025-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-    <video:video>
-      <video:thumbnail_loc>https://franke-motorsport.de/franke-motorsport-banner.PNG</video:thumbnail_loc>
-      <video:title>Franke Motorsport Live Stream</video:title>
-      <video:description>Live Simracing und Kartsport Streams mit professionellem Commentary</video:description>
-      <video:content_loc>https://player.twitch.tv/?channel=frankemotorsport</video:content_loc>
-      <video:player_loc>https://player.twitch.tv/?channel=frankemotorsport</video:player_loc>
-      <video:duration>7200</video:duration>
-      <video:publication_date>2025-09-11T12:00:00+00:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:live>yes</video:live>
-    </video:video>
-  </url>
-
-  <!-- YouTube Channel -->
-  <url>
-    <loc>https://youtube.com/@frankemotorsport</loc>
-    <lastmod>2025-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- News Section Anchor -->
   <url>
     <loc>https://franke-motorsport.de/#news</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,7 +65,7 @@
   <!-- Stream Section Anchor -->
   <url>
     <loc>https://franke-motorsport.de/#streams</loc>
-    <lastmod>2025-09-11</lastmod>
+    <lastmod>2025-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
