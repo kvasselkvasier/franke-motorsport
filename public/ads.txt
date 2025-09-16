@@ -1,14 +1,1 @@
-# ads.txt file for franke-motorsport.de
-# This file declares authorized digital sellers for the domain
-
-# Google AdSense
 google.com, pub-2355675085639342, DIRECT, f08c47fec0942fa0
-
-# Google Ad Manager (if using DFP/GAM)
-google.com, pub-2355675085639342, RESELLER, f08c47fec0942fa0
-
-# Additional authorized sellers (add as needed)
-# facebook.com, YOUR_FACEBOOK_ID, DIRECT, c3e20eee3f780d68
-# amazon-adsystem.com, YOUR_AMAZON_ID, DIRECT, e1a02cb7ec3e
-
-# Last updated: September 2025

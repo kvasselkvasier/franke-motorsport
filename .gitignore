@@ -87,6 +87,8 @@ dist
 # Gatsby files
 .cache/
 public
+# Exception: Keep ads.txt for Google AdSense
+!public/ads.txt
 
 # Storybook build outputs
 .out
