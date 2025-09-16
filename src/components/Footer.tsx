@@ -71,8 +71,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-heading font-semibold mb-6 text-gray-900">Franke Motorsport</h3>
             <p className="text-gray-600 text-base mb-6 leading-relaxed">
-              Familien-Racing Team für Simracing, Kartsport und Motorsport. 
-              Erlebe mit uns spannende Rennen und teile unsere Leidenschaft für Speed und Adrenalin!
+              Authentisches Familien-Racing-Team für Simracing, Kartsport und Motorsport. 
+              Erlebe mit uns echte Racing-Action, lerne von unseren Setups und werde Teil unserer Community – 
+              Von der PlayStation bis zur echten Rennstrecke!
             </p>
           </div>
         </div>

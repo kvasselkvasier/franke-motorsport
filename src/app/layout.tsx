@@ -13,22 +13,27 @@ export const metadata: Metadata = {
     default: "Franke Motorsport | Simracing, Kartsport & Live Motorsport News",
     template: "%s | Franke Motorsport"
   },
-  description: "🏁 Franke Motorsport: Premium Simracing Team, Kartsport Action, Live-Streams auf Twitch, aktuelle Motorsport News & Setup-Guides. Deutschlands führende Motorsport-Community!",
+  description: "Authentisches Familien-Racing-Team seit 2024: Simracing auf PlayStation, echte Kartrennen, Live-Streams auf Twitch, Setup-Guides auf YouTube & Community Building. Von der Konsole bis zur Rennstrecke!",
   keywords: [
     // Hauptkeywords
-    "franke motorsport", "simracing deutschland", "kartsport team", "motorsport livestream",
+    "franke motorsport", "familien racing team", "authentisches racing", "simracing deutschland", "kartsport team", "motorsport livestream",
+    // Familien & Authentisch Keywords
+    "familien motorsport", "family racing", "authentisch racing", "racing familie", "familienprojekt motorsport",
     // Simracing Keywords
-    "simracing", "iracing", "assetto corsa competizione", "gran turismo", "forza motorsport",
-    "racing simulator", "sim racing setups", "racing wheel", "simracing championship",
+    "simracing", "playstation racing", "iracing", "assetto corsa competizione", "gran turismo", "forza motorsport",
+    "racing simulator", "sim racing setups", "racing wheel", "simracing championship", "setup guides",
     // Kartsport Keywords
-    "kartsport", "go kart racing", "kartbahn", "karting deutschland", "kart championship",
+    "kartsport", "kartslalom", "rundstreckenrennen", "go kart racing", "kartbahn", "karting deutschland", "kart championship",
     "rotax", "shifter kart", "rental kart", "outdoor karting", "kartsport verein",
+    // Content & Learning Keywords
+    "racing tipps", "setup guides", "learning moments", "racing tutorials", "motorsport bildung",
+    "racing community", "motorsport lernen", "simracing anfänger", "racing skills",
     // Motorsport Allgemein
     "motorsport", "racing", "formula 1", "f1", "gt3", "dtm", "nürburgring",
     "motorsport blog", "racing team", "motorsport community", "racing news",
-    // Streaming & Content
-    "twitch streamer", "youtube gaming", "livestream", "racing content", "gaming",
-    "esports", "sim racing streams", "motorsport entertainment",
+    // Multi-Platform Content
+    "twitch streamer", "youtube gaming", "instagram racing", "livestream", "racing content", "gaming",
+    "multi platform content", "social media racing", "racing influencer",
     // News & Updates
     "motorsport news", "racing news", "f1 news", "motorsport nachrichten",
     "racing updates", "motorsport feed", "rss news", "aktuelle motorsport news",
@@ -41,8 +46,8 @@ export const metadata: Metadata = {
   publisher: "Franke Motorsport",
   metadataBase: new URL('https://franke-motorsport.de'),
   openGraph: {
-    title: "Franke Motorsport | Premium Simracing & Kartsport Community",
-    description: "🏁 Deutschlands führende Motorsport-Community: Live Simracing Streams, Kartsport Action, aktuelle News & professionelle Setup-Guides. Jetzt live dabei sein!",
+    title: "Franke Motorsport | Authentisches Familien-Racing seit 2020",
+    description: "Familien-Racing-Team: PlayStation Simracing, echte Kartrennen, Live-Streams, Setup-Guides & Community Building. Authentisch, lehrreich und ohne Filter - von der Konsole bis zur Rennstrecke!",
     url: 'https://franke-motorsport.de',
     siteName: 'Franke Motorsport',
     images: [
@@ -260,9 +265,9 @@ export default function RootLayout({
         <meta name="revisit-after" content="1 day" />
         
         {/* Additional Structured Data - Rich Snippets */}
-        <meta name="news_keywords" content="motorsport, simracing, kartsport, formula 1, f1, racing, deutschland, live stream, gaming, esports, instagram, twitch, youtube" />
+        <meta name="news_keywords" content="familien racing, authentisches motorsport, simracing, kartsport, formula 1, f1, racing, deutschland, live stream, gaming, esports, instagram, twitch, youtube, setup guides, racing tipps, learning moments, community building" />
         <meta name="article:section" content="Sports" />
-        <meta name="article:tag" content="Motorsport,Simracing,Kartsport,Gaming,Live Stream,Instagram" />
+        <meta name="article:tag" content="Motorsport,Simracing,Kartsport,Gaming,Live Stream,Instagram,Familien Racing,Authentisch,Setup Guides,Community" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <StructuredData />

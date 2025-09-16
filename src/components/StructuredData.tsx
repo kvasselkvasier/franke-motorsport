@@ -31,8 +31,8 @@ export default function StructuredData() {
             "height": 350,
             "caption": "Franke Motorsport Team Banner"
           },
-          "description": "Professionelles Motorsport-Team spezialisiert auf Simracing, Kartsport, Live-Streaming und Motorsport-Community Building in Deutschland.",
-          "foundingDate": "2020",
+          "description": "Authentisches Familien-Racing-Team seit 2024, spezialisiert auf Simracing, Kartsport, Live-Streaming und Community Building. Von der PlayStation bis zur echten Rennstrecke - Setup-Guides, Racing-Tipps und Learning-Moments ohne Filter.",
+          "foundingDate": "2024",
           "knowsAbout": [
             "Simracing",
             "Kartsport", 
@@ -41,14 +41,27 @@ export default function StructuredData() {
             "Gaming",
             "Racing Setups",
             "Community Management",
-            "Content Creation"
+            "Content Creation",
+            "Familien-Racing",
+            "Authentisches Racing",
+            "Racing-Tipps",
+            "Setup-Guides",
+            "Learning-Moments",
+            "PlayStation Racing",
+            "Kartslalom",
+            "Rundstreckenrennen",
+            "Multi-Platform Content"
           ],
           "specialty": [
+            "Authentisches Familien-Racing",
             "Professional Simracing",
             "Kart Racing",
             "Live Entertainment",
             "Racing Education",
-            "Setup Development"
+            "Setup Development",
+            "Multi-Platform Content Creation",
+            "Community Building",
+            "PlayStation Racing Expertise"
           ],
           "areaServed": {
             "@type": "Country",

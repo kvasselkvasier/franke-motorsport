@@ -52,7 +52,7 @@ export default function Home() {
             Franke Motorsport
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Professionelles Simracing • Kartsport • Live-Streams
+            Authentisches Familien-Racing • Simracing & Kartsport • Live-Streams & Community
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -134,11 +134,25 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-heading font-semibold mb-6 text-gray-900">Über Franke Motorsport</h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 mb-4 text-lg leading-relaxed">
-                Franke Motorsport zeigt die Aktivitäten unserer Familie im Simracing, Kartsport und Motorsport. Wir sind gemeinsam auf der PlayStation im Simracing unterwegs, nehmen am Kartslalom und an Rundstreckenrennen teil und besuchen regelmäßig spannende Motorsport-Veranstaltungen.
+              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                <strong>Willkommen bei Franke Motorsport</strong> – eurem authentischen Familien-Racing-Team! 
+                Seit 2024 leben wir unsere Leidenschaft für Motorsport auf allen Ebenen: Von professionellem Simracing 
+                auf der PlayStation bis hin zu echtem Adrenalinstoß auf Kartbahnen und Rundstrecken.
+              </p>
+              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                Unser Content-Spektrum reicht von <strong>Live-Streams auf Twitch</strong> mit packenden Rennen und 
+                Racing-Tipps, über detaillierte <strong>YouTube-Videos</strong> mit Setup-Guides und Rennen-Highlights, 
+                bis hin zu spontanen <strong>Instagram-Stories</strong> direkt von der Rennstrecke. Wir teilen nicht nur 
+                unsere Siege, sondern auch die Learning-Moments – authentisch und ohne Filter.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Folge uns, schau rein und unterstütze unser Familienprojekt mit einer Spende, damit wir noch mehr Motorsport-Momente erleben und teilen können. Wir freuen uns auf dich im Stream und auf der Strecke! 
+                <strong>Mehr als nur Racing:</strong> Wir bauen eine echte Community auf, in der sich Motorsport-Fans 
+                austauschen, voneinander lernen und gemeinsam ihre Skills verbessern können. Ob Simracing-Einsteiger 
+                oder Kartslalom-Profi – bei uns ist jeder willkommen!
+              </p>
+              <p className="text-gray-700 font-medium text-lg mt-8">
+                Folge uns auf allen Kanälen und werde Teil unserer Racing-Familie! 
+                Unterstütze unser Familienprojekt und erlebe noch mehr authentische Motorsport-Momente mit uns.
               </p>
             </div>
           </div>
