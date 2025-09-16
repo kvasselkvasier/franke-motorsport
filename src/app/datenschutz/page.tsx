@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung | Franke Motorsport - DSGVO konform',
-  description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport: Transparente Informationen zum Umgang mit personenbezogenen Daten, Cookies und Analytics.',
-  keywords: ['datenschutz', 'dsgvo', 'privacy', 'franke motorsport', 'personenbezogene daten', 'cookies', 'datenschutzerklärung'],
+  description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport: Transparente Informationen zum Umgang mit personenbezogenen Daten, Cookies, Analytics und Social Media.',
+  keywords: ['datenschutz', 'dsgvo', 'privacy', 'franke motorsport', 'personenbezogene daten', 'cookies', 'datenschutzerklärung', 'instagram', 'social media'],
   robots: {
     index: true,
     follow: false,
@@ -20,11 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
   },
-  twitter: {
-    card: 'summary',
-    title: 'Datenschutzerklärung | Franke Motorsport',
-    description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport.',
-  },
+  // Twitter Meta-Tags entfernt da kein aktiver Account
   alternates: {
     canonical: 'https://franke-motorsport.de/datenschutz',
   },
@@ -147,6 +143,37 @@ export default function Datenschutz() {
             <p className="text-gray-700 mb-4">
               Wir binden Videos der Plattform YouTube ein. Anbieter ist die Google Ireland Limited, 
               Gordon House, Barrow Street, Dublin 4, Irland.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Instagram</h3>
+            <p className="text-gray-700 mb-4">
+              Unsere Website verweist auf unser Instagram-Profil und kann Instagram-Inhalte einbinden. 
+              Anbieter ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Datenverarbeitung:</strong> Wenn Sie auf Links zu unserem Instagram-Profil 
+              (@franke_motorsport) klicken, werden Sie zu Instagram weitergeleitet. Dabei kann Instagram 
+              Ihr Nutzerverhalten analysieren und personenbezogene Daten wie IP-Adresse, Browsertyp und 
+              Besuchszeit erfassen.
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Zweck:</strong> Bereitstellung von Social Media Inhalten, Marketing und Reichweitenmessung.
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der 
+              Social Media Präsenz und Kundenkommunikation).
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Datenschutzerklärung von Instagram:</strong> 
+              <a href="https://help.instagram.com/519522125107875" target="_blank" rel="noopener noreferrer" 
+                 className="text-blue-600 hover:text-blue-800 underline">
+                https://help.instagram.com/519522125107875
+              </a>
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>Widerspruch:</strong> Sie können der Datenverarbeitung durch Instagram widersprechen, 
+              indem Sie die entsprechenden Einstellungen in Ihrem Instagram-Account vornehmen oder Instagram 
+              nicht besuchen.
             </p>
           </div>
 
