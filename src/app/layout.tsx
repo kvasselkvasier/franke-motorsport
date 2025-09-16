@@ -6,7 +6,13 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Font Optimization
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial']
+});
 
 export const metadata: Metadata = {
   title: {
@@ -169,24 +175,44 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        {/* Google AdSense Auto-Ads Script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2355675085639342"
-          crossOrigin="anonymous"
-        ></script>
+        {/* Kritische CSS inline für bessere Performance */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for above-the-fold content */
+            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+            .professional-section { margin: 3rem 0; }
+            .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+            @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+            .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+            #scroll-progress-bar { 
+              position: fixed; top: 0; left: 0; height: 3px; 
+              background: linear-gradient(90deg, #6366f1, #8b5cf6); 
+              z-index: 9999; transition: width 0.3s ease; 
+            }
+          `
+        }} />
 
-        {/* Google Analytics via next/script */}
+        {/* Google AdSense - Optimiert laden */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2355675085639342"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+
+        {/* Google Analytics - Optimiert laden */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga-inline-script" strategy="afterInteractive">
+        <Script id="ga-inline-script" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
+            gtag('config', 'GA_MEASUREMENT_ID', {
+              page_title: document.title,
+              page_location: window.location.href
+            });
           `}
         </Script>
         
@@ -204,21 +230,22 @@ export default function RootLayout({
   <meta name="msapplication-TileColor" content="#18181b" />
   <meta name="msapplication-config" content="/browserconfig.xml" />
   
-  {/* Performance & Preloading */}
+  {/* Performance & Preloading - Kritische Ressourcen */}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+  <link rel="preload" href="/franke-motorsport-banner.PNG" as="image" type="image/png" fetchPriority="high" />
+  
+  {/* Wichtige externe Ressourcen */}
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-  <link rel="preconnect" href="https://player.twitch.tv" />
-  <link rel="preconnect" href="https://www.youtube.com" />
-  <link rel="preconnect" href="https://www.instagram.com" />
   
-  {/* DNS Prefetch for external resources */}
+  {/* Lazy Loading für weniger kritische Ressourcen */}
+  <link rel="dns-prefetch" href="//player.twitch.tv" />
+  <link rel="dns-prefetch" href="//www.youtube.com" />
+  <link rel="dns-prefetch" href="//www.instagram.com" />
   <link rel="dns-prefetch" href="//twitch.tv" />
   <link rel="dns-prefetch" href="//youtube.com" />
   <link rel="dns-prefetch" href="//instagram.com" />
-  <link rel="dns-prefetch" href="//racefans.net" />
-  <link rel="dns-prefetch" href="//reddit.com" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

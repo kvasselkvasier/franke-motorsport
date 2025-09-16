@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-gray-100 border-t border-gray-200 mt-16">
       <div className="container mx-auto px-4 py-12">
@@ -96,5 +98,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
