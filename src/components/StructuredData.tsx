@@ -62,8 +62,7 @@ export default function StructuredData() {
           "sameAs": [
             "https://twitch.tv/frankemotorsport",
             "https://youtube.com/@frankemotorsport",
-            "https://twitter.com/frankemotorsport",
-            "https://instagram.com/frankemotorsport"
+            "https://instagram.com/franke_motorsport"
           ],
           "contactPoint": [
             {

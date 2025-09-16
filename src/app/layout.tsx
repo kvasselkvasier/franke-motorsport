@@ -65,21 +65,7 @@ export const metadata: Metadata = {
     type: 'website',
     countryName: 'Germany',
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@frankemotorsport',
-    creator: '@frankemotorsport',
-    title: '🏁 Franke Motorsport | Live Simracing & Kartsport',
-    description: 'Premium Simracing Team ⚡ Kartsport Action ⚡ Live-Streams ⚡ Setup-Guides ⚡ Motorsport News. Deutschlands #1 Racing Community!',
-    images: [
-      {
-        url: '/franke-motorsport-banner.PNG',
-        alt: 'Franke Motorsport - Live Simracing & Kartsport Streams',
-        width: 1200,
-        height: 350,
-      }
-    ],
-  },
+  // Entfernt: Twitter Meta-Tags da kein aktiver Account
   robots: {
     index: true,
     follow: true,
@@ -220,10 +206,12 @@ export default function RootLayout({
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
   <link rel="preconnect" href="https://player.twitch.tv" />
   <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://www.instagram.com" />
   
   {/* DNS Prefetch for external resources */}
   <link rel="dns-prefetch" href="//twitch.tv" />
   <link rel="dns-prefetch" href="//youtube.com" />
+  <link rel="dns-prefetch" href="//instagram.com" />
   <link rel="dns-prefetch" href="//racefans.net" />
   <link rel="dns-prefetch" href="//reddit.com" />
         
@@ -248,8 +236,8 @@ export default function RootLayout({
         <meta property="og:site_name" content="Franke Motorsport" />
         <meta property="og:locale" content="de_DE" />
         <meta property="article:author" content="Franke Motorsport" />
-        <meta name="twitter:domain" content="franke-motorsport.de" />
-        <meta name="twitter:url" content="https://franke-motorsport.de" />
+        <meta name="instagram:account" content="franke_motorsport" />
+        <meta property="article:publisher" content="https://instagram.com/franke_motorsport" />
         
         {/* Business Information */}
         <meta name="geo.region" content="DE" />
@@ -272,9 +260,9 @@ export default function RootLayout({
         <meta name="revisit-after" content="1 day" />
         
         {/* Additional Structured Data - Rich Snippets */}
-        <meta name="news_keywords" content="motorsport, simracing, kartsport, formula 1, f1, racing, deutschland, live stream, gaming, esports" />
+        <meta name="news_keywords" content="motorsport, simracing, kartsport, formula 1, f1, racing, deutschland, live stream, gaming, esports, instagram, twitch, youtube" />
         <meta name="article:section" content="Sports" />
-        <meta name="article:tag" content="Motorsport,Simracing,Kartsport,Gaming,Live Stream" />
+        <meta name="article:tag" content="Motorsport,Simracing,Kartsport,Gaming,Live Stream,Instagram" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <StructuredData />
