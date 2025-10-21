@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Impressum | Franke Motorsport',
     description: 'Rechtliche Angaben und Kontaktinformationen von Franke Motorsport - Deutschlands Premium Motorsport Team.',
-    url: 'https://franke-motorsport.de/impressum',
+    url: 'https://www.franke-motorsport.de/impressum',
     type: 'website',
     locale: 'de_DE',
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Rechtliche Angaben von Franke Motorsport - Premium Simracing & Kartsport Team.',
   },
   alternates: {
-    canonical: 'https://franke-motorsport.de/impressum',
+    canonical: 'https://www.franke-motorsport.de/impressum',
   },
 };
 

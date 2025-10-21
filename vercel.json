@@ -10,12 +10,23 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://franke-motorsport.de/$1",
+      "destination": "https://www.franke-motorsport.de/$1",
       "permanent": true,
       "has": [
         {
           "type": "host",
           "value": "franke-motorsport.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://www.franke-motorsport.de/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "franke-motorsport.de"
         }
       ]
     }

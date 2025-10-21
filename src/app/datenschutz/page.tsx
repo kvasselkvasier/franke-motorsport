@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Datenschutzerklärung | Franke Motorsport',
     description: 'DSGVO-konforme Datenschutzerklärung von Franke Motorsport - Transparent und nutzerfreundlich.',
-    url: 'https://franke-motorsport.de/datenschutz',
+    url: 'https://www.franke-motorsport.de/datenschutz',
     type: 'website',
     locale: 'de_DE',
   },
   // Twitter Meta-Tags entfernt da kein aktiver Account
   alternates: {
-    canonical: 'https://franke-motorsport.de/datenschutz',
+    canonical: 'https://www.franke-motorsport.de/datenschutz',
   },
 };
 

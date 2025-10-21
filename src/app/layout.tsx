@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     "motorsport deutschland", "racing germany", "simracing community",
     "impressum", "datenschutz", "rechtliche hinweise"
   ],
-  authors: [{ name: "Franke Motorsport Team", url: "https://franke-motorsport.de" }],
+  authors: [{ name: "Franke Motorsport Team", url: "https://www.franke-motorsport.de" }],
   creator: "Franke Motorsport",
   publisher: "Franke Motorsport",
-  metadataBase: new URL('https://franke-motorsport.de'),
+  metadataBase: new URL('https://www.franke-motorsport.de'),
   openGraph: {
     title: "Franke Motorsport | Authentisches Familien-Racing seit 2020",
     description: "Familien-Racing-Team: PlayStation Simracing, echte Kartrennen, Live-Streams, Setup-Guides & Community Building. Authentisch, lehrreich und ohne Filter - von der Konsole bis zur Rennstrecke!",
-    url: 'https://franke-motorsport.de',
+    url: 'https://www.franke-motorsport.de',
     siteName: 'Franke Motorsport',
     images: [
       {
@@ -99,10 +99,10 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code', // TODO: Bing Webmaster Tools (not supported by Next.js metadata)
   },
   alternates: {
-    canonical: 'https://franke-motorsport.de',
+    canonical: 'https://www.franke-motorsport.de',
     languages: {
-      'de-DE': 'https://franke-motorsport.de',
-      'x-default': 'https://franke-motorsport.de',
+      'de-DE': 'https://www.franke-motorsport.de',
+      'x-default': 'https://www.franke-motorsport.de',
     },
   },
   other: {
@@ -124,8 +124,8 @@ export const metadata: Metadata = {
     'revisit-after': '1 days',
     'contact_email': 'webmaster@franke-motorsport.de',
     'owner': 'Franke Motorsport',
-    'url': 'https://franke-motorsport.de',
-    'identifier-URL': 'https://franke-motorsport.de',
+    'url': 'https://www.franke-motorsport.de',
+    'identifier-URL': 'https://www.franke-motorsport.de',
     'directory': 'submission',
     'category': 'Sports, Gaming, Entertainment, Community',
     'geo_coverage': 'Germany',
@@ -149,7 +149,7 @@ export const metadata: Metadata = {
   },
   itunes: {
     appId: 'your-app-id', // Falls es eine App gibt
-    appArgument: 'https://franke-motorsport.de',
+    appArgument: 'https://www.franke-motorsport.de',
   },
   appleWebApp: {
     title: 'Franke Motorsport',

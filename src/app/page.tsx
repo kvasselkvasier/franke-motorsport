@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   
   // KORREKTER Canonical Tag für die Startseite
   alternates: {
-    canonical: 'https://franke-motorsport.de',
+    canonical: 'https://www.franke-motorsport.de',
     languages: {
-      'de-DE': 'https://franke-motorsport.de',
-      'x-default': 'https://franke-motorsport.de',
+      'de-DE': 'https://www.franke-motorsport.de',
+      'x-default': 'https://www.franke-motorsport.de',
     },
   },
   
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Franke Motorsport | Authentisches Familien-Racing seit 2024",
     description: "Familien-Racing-Team: PlayStation Simracing, echte Kartrennen, Live-Streams, Setup-Guides & Community Building. Authentisch, lehrreich und ohne Filter - von der Konsole bis zur Rennstrecke!",
-    url: 'https://franke-motorsport.de',
+    url: 'https://www.franke-motorsport.de',
     siteName: 'Franke Motorsport',
     type: 'website',
     locale: 'de_DE',
